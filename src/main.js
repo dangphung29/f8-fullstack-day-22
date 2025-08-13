@@ -18,12 +18,12 @@ addBtn.onclick = submit
 function submit(e) {
     e.preventDefault()
     const data = {
-        taskName: todoInput.value,
+        taskName: todoInput.value.trim(),
         isDone: false
     }
 
     const existedTask = taskData.find((task) => {
-        return task.taskName.toLocaleLowerCase() === data.taskName.toLocaleLowerCase()
+        return task.taskName.trim().toLocaleLowerCase() === data.taskName.toLocaleLowerCase()
     })
     // validate chuỗi rống và khoảng trắng
     if (data.taskName.trim() === '') {
